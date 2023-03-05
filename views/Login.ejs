@@ -1,0 +1,47 @@
+<%- include('loginHeader'); -%>
+<div class="container">
+  <div class="frame">
+    <div class="nav">
+      <ul class="links">
+        <li class="signin-active"><a class="btn">Existing User</a></li>
+        <li class="signup-inactive"><a class="btn">New User</a></li>
+      </ul>
+    </div>
+    <div ng-app ng-init="checked = false">
+      <form class="form-signin" action="/login" method="post" name="form">
+        <label for="email">Email</label>
+        <input class="form-styling" type="text" name="email" autofocus autocomplete="off" required />
+        <label for="password">Password</label>
+        <input
+          class="form-styling"
+          type="password"
+          name="password"
+          autocomplete="off"
+          required />
+        <!-- <input type="checkbox" id="checkbox" />
+                    <label for="checkbox">
+                        <span class="ui"></span>Keep me signed in
+                    </label> -->
+        <button type="submit" class="btn-animate btn-hover">
+          <a class="btn-signin">Login to your account</a>
+        </button>
+      </form>
+      <form class="form-signup" action="/register" method="post" name="form">
+        <label for="fullname">Full name</label>
+        <input class="form-styling" type="text" name="fullname" autocomplete="off" required />
+        <label for="email">Email</label>
+        <input class="form-styling" type="text" name="email" autocomplete="off" required />
+        <label for="password">Create password</label>
+        <input
+          class="form-styling"
+          type="password"
+          name="password"
+          autocomplete="off"
+          required />
+        <button type="submit" class="btn-signup btn-hover">REGISTER</button>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

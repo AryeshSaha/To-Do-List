@@ -1,0 +1,36 @@
+<%- include('header'); -%>
+
+<div class="box" id="heading">
+  <h1><%= theDay %></h1>
+</div>
+
+<div class="box">
+  <h2>Tasks for today</h2>
+  <% tasks.forEach(e => { %>
+  <form action="/delete" method="post">
+    <div class="item">
+      <input
+        type="checkbox"
+        name="checkbox"
+        value="<%= e._id %>"
+        onChange="this.form.submit()"
+      />
+      <p><%= e.task %></p>
+    </div>
+  </form>
+  <% }) %>
+
+  <form action="/create" method="post">
+    <input
+      type="text"
+      name="task"
+      id="task"
+      autocomplete="off"
+      autofocus
+      required
+    />
+    <button type="submit">+</button>
+  </form>
+</div>
+
+<%- include('footer'); -%>
